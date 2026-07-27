@@ -41,3 +41,13 @@ This repository contains two Bash scripts that work together:
 3. Configure Harbor environment variables.
 4. Mirror images into Harbor.
 
+---
+
+## Sample Skopeo command if you wanted to add another image manually
+
+```
+skopeo --debug copy --all \
+   --dest-creds "${HARBOR_USERNAME}:${HARBOR_PASSWORD}" \
+   docker://python:3.12-slim \
+   docker://harbor.example.com/public/docker.io/python:3.12-slim
+```
